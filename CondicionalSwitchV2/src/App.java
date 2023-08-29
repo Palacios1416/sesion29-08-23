@@ -4,19 +4,21 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         int valor_1, valor_2, resultado;
-        double cociente = 0;
+        double cociente = 0, exponente;
         System.out.println("----------MENU-----------");
-        System.out.println("\t1) SUMAR");
-        System.out.println("\t2) RESTAR");
-        System.out.println("\t3) MULTIPLICAR");
-        System.out.println("\t4) DIVIDIR");
-        System.out.println("\t5) SALIR");
+        System.out.println("\ta) SUMAR");
+        System.out.println("\tb) RESTAR");
+        System.out.println("\tc) MULTIPLICAR");
+        System.out.println("\td) DIVIDIR");
+        System.out.println("\te) POTENCIACION");
+        System.out.println("\tf) RADICACION");
+        System.out.println("\tg) SALIR");
         System.out.println("----------MENU-----------");
 
-        byte opcion = scanner.nextByte();
+        char opcion = scanner.next().charAt(0);
 
         switch (opcion) {
-            case 1:
+            case 'a':
                 System.out.println("----------SUMA-----------");
                 System.out.println("Ingrese el primer valor: ");
                  valor_1 = scanner.nextInt();
@@ -25,7 +27,7 @@ public class App {
                  resultado = valor_1 + valor_2;
                 System.out.println("La suma de: " + valor_1 + " y " + valor_2 + " es: " + resultado);
                 break;
-            case 2:
+            case 'b':
                 System.out.println("----------RESTA-----------");
                 System.out.println("Ingrese el primer valor: ");
                  valor_1 = scanner.nextInt();
@@ -34,7 +36,7 @@ public class App {
                  resultado = valor_1-valor_2;
                 System.out.println("La resta de: " + valor_1 + " y " + valor_2 + " es: " + resultado);
                 break;
-            case 3:
+            case 'c':
                 System.out.println("----------MULTIPLICACION-----------");
                 System.out.println("Ingrese el primer valor: ");
                  valor_1 = scanner.nextInt();
@@ -43,7 +45,7 @@ public class App {
                  resultado = valor_1*valor_2;
                 System.out.println("La multiplicacion de: " + valor_1 + " y " + valor_2 + " es: " + resultado);
                 break;
-            case 4:
+            case 'd':
                 System.out.println("----------DIVIDIR-----------");
                 System.out.println("Ingrese el numerador valor: ");
                  double numerador = scanner.nextInt();
@@ -57,7 +59,29 @@ public class App {
                  }
                 
                 break;
-            case 5:
+            case 'e':
+                System.out.println("----------POTENCIACION-----------");
+                System.out.println("Ingrese la base a potenciar: ");
+                 valor_1 = scanner.nextInt();
+                System.out.println("Ingrese el exponente: ");
+                 valor_2 = scanner.nextInt();
+                 exponente = Math.pow(valor_1, valor_2);
+
+                System.out.println("La potenciacion de: " + valor_1 + " y " + valor_2 + " es: " + exponente);
+                break;
+            case 'f':
+                System.out.println("----------RADICACION-----------");
+                System.out.println("Ingrese la base a radicar: ");
+                 valor_1 = scanner.nextInt();
+                 if (valor_1 < 0) {
+                    System.out.println("No es posible radicar un negativo porque es un numero imaginario");
+                 } else {
+                    double radicacion = Math.sqrt(valor_1);
+                    System.out.println("La radicacion de: " + valor_1 + " es: " + radicacion);
+                 }
+                 
+                break;
+            case 'g':
                 System.out.println("Tenga buen dia");
                 break;
         
